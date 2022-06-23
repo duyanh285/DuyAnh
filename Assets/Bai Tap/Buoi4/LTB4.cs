@@ -7,13 +7,13 @@ public class LTB4 : MonoBehaviour
 {
     //mang 2 chieu
     // float[,]secondArray =  new float[2,5];
-    /* float[,] secondArray = new float[,]
-     {
+    float[,] secondArray = new float[,]
+    {
         {1.2f,1.5f },
         {3.2f,2.5f },
         {6.2f,3.5f },
 
-     };*/
+    };
 
     /*float[,] secondArray =
     {
@@ -23,9 +23,10 @@ public class LTB4 : MonoBehaviour
      };*/
 
     //float[,] secondArray;
-    int[] secondArray = { 1, 5, 4, 67, 9 };
+    //int[] secondArray = { 1, 5, 4, 67, 9 };
+   // int[] secondArray;
 
-   // int[] scoreArray;
+    // int[] scoreArray;
     //int[] scoreArray2;
     //int[] scoreArray = new int[10];
     //int[] scoreArray = new int[] { 1, 2, 3 };
@@ -34,30 +35,34 @@ public class LTB4 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        /*secondArray = new int[] { 11, 88, 6 };
+        Debug.Log(secondArray[0]);
+        Debug.Log(secondArray[2]);
+        Debug.Log("mangh"+secondArray.Length);*/
 
-     /*   secondArray = new float[1, 5];
-        secondArray = new float[,]
+        /*   secondArray = new float[1, 5];
+           secondArray = new float[,]
+           {
+                {1.2f,1.5f },
+                {3.2f,2.5f },
+                {6.2f,3.5f }
+           };*/
+
+       // Debug.Log(secondArray.Length);
+
+      /*  Debug.Log($"so daong cua mang {secondArray.GetLength(0)}," +
+            $"so cot cua mang {secondArray.GetLength(1)}");
+        scoreArray = new int[] { 23, 58, 43, 99 };
+        scoreArray = new int[] { 23, 58, 43, 99 };
+*/
+        for (int i = 0; i < secondArray.GetLength(0); i++)
         {
-             {1.2f,1.5f },
-             {3.2f,2.5f },
-             {6.2f,3.5f }
-        };*/
-
-        /* Debug.Log(secondArray.Length);
-
-         Debug.Log($"so daong cua mang {secondArray.GetLength(0)},"+
-             $"so cot cua mang {secondArray.GetLength(1)}");
-         scoreArray = new int[] { 23, 58, 43, 99 };
-         scoreArray = new int[] { 23, 58, 43, 99 };*/
-
-        /* for (int i = 0; i < secondArray.GetLength(0); i++)
-         {
-             for(int j= 0; j < secondArray.GetLength(1); j++)
-             {
-                 Debug.Log(secondArray[i, j
-                     ]);
-             }
-         }*/
+            for (int j = 0; j < secondArray.GetLength(1); j++)
+            {
+                Debug.Log(secondArray[i, j
+                    ]);
+            }
+        }
 
         /*int row = 0;
        int col = 0;
@@ -102,10 +107,10 @@ public class LTB4 : MonoBehaviour
             Debug.Log(temp);
         }
 */
-        /*foreach ( temp in secondArray)
+       /* foreach (int temp in secondArray)
         {
             Debug.Log(temp);
-        }*/
+        }
 
         for (int i = secondArray.Length-1; i >= 0; i--)
         {
@@ -114,11 +119,11 @@ public class LTB4 : MonoBehaviour
             {
                 Debug.Log($"phan tu lien truoc cua {secondArray[i]} la: {secondArray[i - 1]}");
             }
-            if(i<secondArray.Length-1)
+            if (i<secondArray.Length-1)
             {
                 Debug.Log($"phan tu lien sau cua {secondArray[i]} la: {secondArray[i + 1]}");
             }
-        }
+        }*/
 
 
     }
