@@ -33,7 +33,6 @@ public class BTB31 : MonoBehaviour
         Perform(a, b, THUONG);
         Perform(a, b, TICH);
         Perform(a, b, sai);
-
     }
     
     void Perform(int a, int b, int phepTinh)

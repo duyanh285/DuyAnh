@@ -16,19 +16,19 @@ namespace DA.HomeWorks.Day3
 
 public class BTB32 : MonoBehaviour
 {
-    int[] scoredAr = { 1, 2, 4, 5, 7, 9 ,11};
+    int[] scoredAr = { 1, 2, 4, 5, 7, 9, 11 };
     int[] scoredAr2 = { 1, 2, 3, 4, 5 };
 
     // Start is called before the first frame update
     void Start()
     {
-        // TongsoCL();
+        TongsoCL();
 
-        // tongSo();
+        tongSo();
 
         SoNguyenTo();
     }
-    /*void TongsoCL()
+    void TongsoCL()
     {
         //for
         int tsChan = 0;
@@ -42,8 +42,8 @@ public class BTB32 : MonoBehaviour
                 tsLe += scoredAr[i];
         }
 
-        Debug.Log($" Tong so chan la 1 = {tsChan}");
-        Debug.Log($" Tong so le la  1= {tsLe}");
+        Debug.Log($" for: Tong so chan la 1 = {tsChan}");
+        Debug.Log($" for:Tong so le la  1= {tsLe}");
 
 
         //while
@@ -58,8 +58,8 @@ public class BTB32 : MonoBehaviour
                 tsLe += scoredAr[count];
             count++;
         }
-        Debug.Log($" Tong so chan la 2= {tsChan}");
-        Debug.Log($" Tong so le la2 = {tsLe}");
+        Debug.Log($" while: Tong so chan la 2= {tsChan}");
+        Debug.Log($" while: Tong so le la2 = {tsLe}");
 
         //do-while
 
@@ -75,21 +75,21 @@ public class BTB32 : MonoBehaviour
             count++;
         }
         while (count < scoredAr.Length);
-        Debug.Log($" Tong so chan la 3 = {tsChan}");
-        Debug.Log($" Tong so le la 3 = {tsLe}");
-    }*/
+        Debug.Log($"do-while: Tong so chan la 3 = {tsChan}");
+        Debug.Log($"do-while: Tong so le la 3 = {tsLe}");
+    }
 
-    /*void tongSo()
+    void tongSo()
     {
         //for
-        int tong= 0;
-        int count =0;
+        int tong = 0;
+        int count = 0;
         for (int i = 0; i < scoredAr.Length; i++)
         {
             tong += scoredAr[i];
         }
 
-        Debug.Log($"Tong cac so 1 ={tong}");
+        Debug.Log($"for:Tong cac so 1 ={tong}");
 
         //while
         tong = 0;
@@ -99,7 +99,7 @@ public class BTB32 : MonoBehaviour
             tong += scoredAr[count];
             count++;
         }
-        Debug.Log($"Tong cac co 2 = {tong}");
+        Debug.Log($"while:Tong cac co 2 = {tong}");
 
 
         tong = 0;
@@ -110,9 +110,9 @@ public class BTB32 : MonoBehaviour
             count++;
         }
         while (count < scoredAr.Length);
-        Debug.Log($"Tong cac co 3 = {tong}");
+        Debug.Log($"do-while:Tong cac co 3 = {tong}");
     }
-*/
+
 
     void SoNguyenTo()
     {
@@ -123,15 +123,15 @@ public class BTB32 : MonoBehaviour
             if (scoredAr[i] < 2) continue;
             if (scoredAr[i] == 2 || scoredAr[i] == 3)
             {
-                tapSNT +=scoredAr[i]+ ",";
+                tapSNT += scoredAr[i] + ",";
                 continue;
             }
 
             for (int j = 2; j < scoredAr[i]; j++)
             {
-                if (scoredAr[i] % j == 0) 
+                if (scoredAr[i] % j == 0)
                     break;
-                if (j == scoredAr[i] - 1) 
+                if (j == scoredAr[i] - 1)
                     tapSNT += scoredAr[i] + ","
                         ;
             }
@@ -167,7 +167,7 @@ public class BTB32 : MonoBehaviour
 
         //do-while
         tapSNT = "";
-         count = 0;
+        count = 0;
         do
         {
             if (scoredAr[count] < 2)
