@@ -9,7 +9,7 @@ public class GAIBT41 : MonoBehaviour
     void Start()
     {
         //TimSoGiongNhau(array);
-        TimSoDuyNhat(array);
+       TimSoDuyNhat(array);
     }
     void TimSoGiongNhau(int[] array)
     {
@@ -48,9 +48,5 @@ public class GAIBT41 : MonoBehaviour
                 Debug.Log($"So duy nhat trong mang la {pt01}");
         }
     }
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
+   
 }
