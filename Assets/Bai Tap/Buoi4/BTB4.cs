@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 namespace DA.Homeworks.buoi4
 {
@@ -16,7 +17,7 @@ namespace DA.Homeworks.buoi4
     public class BTB4 : MonoBehaviour
     {
         //tìm các số giống nhau trong mảng 
-        int[] Array1 = new int[] { 1, 2, 4, 2, 6, 1, 7, 8,6, 5 };
+        int[] Array1 = new int[] { 1, 2, 4, 2, 6, 1, 7, 8, 6, 5 };
 
         int[,] Array2 = new int[,]
         {
@@ -27,24 +28,24 @@ namespace DA.Homeworks.buoi4
         // Start is called before the first frame update
         void Start()
         {
-           /* SoGiongNhau(Array1);
-            SoGiongNhauTraVe(Array1);*/
+            /* SoGiongNhau(Array1);
+             SoGiongNhauTraVe(Array1);*/
 
-          /*  SoPhanTuDuyNhat(Array1);
-            SoPhanTuDuyNhatTraVe(Array1);*/
+            /*  SoPhanTuDuyNhat(Array1);
+              SoPhanTuDuyNhatTraVe(Array1);*/
 
-           /* CacSoChan();
-            CacSoChanTraVe(Array1);*/
+            /* CacSoChan();
+             CacSoChanTraVe(Array1);*/
 
-          /* CacSoLe();
-            CacSoLeTraVe(Array1);*/
+            /* CacSoLe();
+              CacSoLeTraVe(Array1);*/
 
-            TongCacPhanTu();
-            TongCacPhanTuTraVe(Array1);
+            /* TongCacPhanTu();
+             TongCacPhanTuTraVe(Array1);
 
-            TichCacPhantu();
-            TichCacPhantuTraVe(Array1);
-
+             TichCacPhantu();
+             TichCacPhantuTraVe(Array1);
+ */
 
             /* for (int i = 0; i < Array2.GetLength(0); i++)
              {
@@ -53,11 +54,72 @@ namespace DA.Homeworks.buoi4
                      Debug.Log(Array2[i, j]);
                  }
              }*/
+
+            SoGiongNhau2c(Array2);
+            var temArr = SoGiongNhau2TV(Array2);
+            for (int i = 0; i < temArr.Length; i++)
+            {
+                Debug.Log(temArr[i]);
+            }
+
         }
+        int[] SoGiongNhau2TV(int[,] Array2)
+        {
+            int[] kp = new int[Array2.GetLength(0)];
+
+            int count = 0;
+
+            for (int i = 0; i < Array2.GetLength(0); i++)
+            {
+                for (int j = 0; j < Array2.GetLength(1); j++)
+                {
+                    var pt1 = Array2[i, j];
+
+                    for (int k = 0; k < Array2.GetLength(0); k++)
+                    {
+                        for (int l = 0; l < Array2.GetLength(1); l++)
+                        {
+                            var pt2 = Array2[k, l];
+
+                            if (pt1 == pt2 && (i != k && j != l))
+                            {
+                                Array.Resize(ref kp, count+1);
+                                kp[count] = pt1;
+                                count++;
+                            }
+                        }
+                    }
+                }
+            }
+            return kp;
+        }
+
+        void SoGiongNhau2c(int[,] Array2)
+        {
+            for (int i = 0; i < Array2.GetLength(0); i++)
+            {
+                for (int j = 0; j < Array2.GetLength(1); j++)
+                {
+                    var pt1 = Array2[i, j];
+
+                    for (int k = 0; k < Array2.GetLength(0); k++)
+                    {
+                        for (int l = 0; l < Array2.GetLength(1); l++)
+                        {
+                            var pt2 = Array2[k, l];
+                            if (pt1 == pt2 && (i != k && j != l))
+                                Debug.Log($"Phan tu giong nhau la : {pt1} ");
+
+                        }
+                    }
+                }
+            }
+        }
+           
 
         void SoGiongNhau(int[] Array1)
         {
-
+            //1c
             for (int i = 0; i < Array1.Length; i++)
             {
                 var pt01 = Array1[i];
@@ -142,7 +204,7 @@ namespace DA.Homeworks.buoi4
                 }
             }
         }
-       int  CacSoChanTraVe(int[]Array)
+        int CacSoChanTraVe(int[] Array)
         {
             int ketqua = 0;
             for (int i = 0; i < Array1.Length; i++)
@@ -169,7 +231,7 @@ namespace DA.Homeworks.buoi4
         }
 
 
-        int CacSoLeTraVe(int[]Array1)
+        int CacSoLeTraVe(int[] Array1)
         {
             int ketqua = 0;
             for (int i = 0; i < Array1.Length; i++)
@@ -194,7 +256,7 @@ namespace DA.Homeworks.buoi4
         }
 
 
-        int TongCacPhanTuTraVe(int[]Array1)
+        int TongCacPhanTuTraVe(int[] Array1)
         {
             int ketqua = 0;
             int i, sum = 0;
@@ -218,7 +280,7 @@ namespace DA.Homeworks.buoi4
             Debug.Log($"tich  :{temp}");
         }
 
-        int TichCacPhantuTraVe(int[]Array1)
+        int TichCacPhantuTraVe(int[] Array1)
         {
             int ketqua = 0;
             int i, temp = 1;
