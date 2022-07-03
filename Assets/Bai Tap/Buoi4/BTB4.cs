@@ -17,7 +17,7 @@ namespace DA.Homeworks.buoi4
     public class BTB4 : MonoBehaviour
     {
         //tìm các số giống nhau trong mảng 
-        int[] Array1 = new int[] { 1, 2, 4, 2, 6, 1, 7, 8, 6, 5 };
+        int[] Array1 = new int[] { 1, 2, 4, 2, 6, 1, 7, 8, 6, 5 ,4};
 
         int[,] Array2 = new int[,]
         {
@@ -31,8 +31,8 @@ namespace DA.Homeworks.buoi4
             /* SoGiongNhau(Array1);
              SoGiongNhauTraVe(Array1);*/
 
-            /*  SoPhanTuDuyNhat(Array1);
-              SoPhanTuDuyNhatTraVe(Array1);*/
+             //SoPhanTuDuyNhat(Array1);
+            // SoPhanTuDuyNhatTraVe(Array1);
 
             /* CacSoChan();
              CacSoChanTraVe(Array1);*/
@@ -44,24 +44,25 @@ namespace DA.Homeworks.buoi4
              TongCacPhanTuTraVe(Array1);
 
              TichCacPhantu();
-             TichCacPhantuTraVe(Array1);
- */
+             TichCacPhantuTraVe(Array1);*/
 
-            /* for (int i = 0; i < Array2.GetLength(0); i++)
+
+            /* SoGiongNhau2c(Array2);
+             var temArr = SoGiongNhau2TV(Array2);
+             for (int i = 0; i < temArr.Length; i++)
              {
-                 for (int j = 0; j < Array2.GetLength(1); j++)
-                 {
-                     Debug.Log(Array2[i, j]);
-                 }
+                 Debug.Log(temArr[i]);
              }*/
 
-            SoGiongNhau2c(Array2);
-            var temArr = SoGiongNhau2TV(Array2);
-            for (int i = 0; i < temArr.Length; i++)
-            {
-                Debug.Log(temArr[i]);
-            }
+           /* SoPhanTuDuyNhat2C(Array2);
+            SoPhanTuDuyNhat2CTV(Array2);*/
 
+
+         /*   CacSoChan2C();
+            CacSoChan2CTV(Array2);*/
+
+            CacSoLe2C();
+            CacSoLe2CTV(Array2);
         }
         int[] SoGiongNhau2TV(int[,] Array2)
         {
@@ -83,7 +84,7 @@ namespace DA.Homeworks.buoi4
 
                             if (pt1 == pt2 && (i != k && j != l))
                             {
-                                Array.Resize(ref kp, count+1);
+                                Array.Resize(ref kp, count + 1);
                                 kp[count] = pt1;
                                 count++;
                             }
@@ -109,13 +110,12 @@ namespace DA.Homeworks.buoi4
                             var pt2 = Array2[k, l];
                             if (pt1 == pt2 && (i != k && j != l))
                                 Debug.Log($"Phan tu giong nhau la : {pt1} ");
-
                         }
                     }
                 }
             }
         }
-           
+
 
         void SoGiongNhau(int[] Array1)
         {
@@ -126,7 +126,7 @@ namespace DA.Homeworks.buoi4
                 for (int j = 0; j < Array1.Length; j++)
                 {
                     var pt02 = Array1[j];
-                    if (pt01 == pt02 && i == j)
+                    if (pt01 == pt02 && i != j)
                         Debug.Log($"So giong nhau : {pt01}");
                 }
             }
@@ -152,6 +152,78 @@ namespace DA.Homeworks.buoi4
         }
 
 
+
+        void SoPhanTuDuyNhat2C(int[,] Array2)
+        {
+            for (int i = 0; i < Array2.GetLength(0); i++)
+            {
+                for (int j = 0; j < Array2.GetLength(1); j++)
+                {
+                    int count = 0;
+                    var pt1 = 0;
+                    pt1 = Array2[i, j];
+
+                    for (int k = 0; k < Array2.GetLength(0); k++)
+                    {
+                        for (int l = 0; l < Array2.GetLength(1); l++)
+                        {
+                            var pt2 = Array2[k, l];
+                            if (pt1 == pt2 && i != k && j != l)
+                            {
+                                count++;
+                            }
+                        }
+                    }
+                    if (count == 0)
+                        Debug.Log($"Phan tu duy nhat trong mang 2 chieu la : {pt1}");
+                }
+                
+            }
+        }
+
+
+        int[] SoPhanTuDuyNhat2CTV(int[,] Array2)
+        {
+            int[] kq = new int[Array2.GetLength(0)];
+            var index = 0;
+
+            for (int i = 0; i < Array2.GetLength(0); i++)
+            {
+                for (int j = 0; j < Array2.GetLength(1); j++)
+                {
+                    int count = 0;
+                    var pt1 = 0;
+                    pt1 = Array2[i, j];
+
+                    for (int k = 0; k < Array2.GetLength(0); k++)
+                    {
+                        for (int l = 0; l < Array2.GetLength(1); l++)
+                        {
+                            var pt2 = Array2[k, l];
+                            if (pt1 == pt2 && i != k && j != l)
+                            {
+                                count++;
+                            }
+                        }
+                    }
+                    if (count == 0)
+                    {
+                        Array.Resize(ref kq, index + 1);
+                        kq[index] = pt1;
+                        index++;
+                    }                   
+                }
+                
+            }
+            for (int i = 0; i < kq.Length; i++)
+            {
+                Debug.Log("2 CHIEU TRA VE :" + kq[i]);
+            }
+            return kq;
+        }
+
+
+
         void SoPhanTuDuyNhat(int[] Array1)
         {
             for (int i = 0; i < Array1.Length; i++)
@@ -168,7 +240,7 @@ namespace DA.Homeworks.buoi4
                     }
                 }
                 if (count == 0)
-                    Debug.Log($"SO day nhat trong mang la {pt01}");
+                    Debug.Log($"SO duy nhat trong mang la {pt01}");
             }
         }
 
@@ -216,8 +288,87 @@ namespace DA.Homeworks.buoi4
             }
             return ketqua;
         }
+         
+        void CacSoChan2C()
+        {
+            for (int i = 0; i < Array2.GetLength(0); i++)
+            {
+                for (int j= 0; j < Array2.GetLength(1); j++)
+                {
+                    if (Array2[i,j] % 2 == 0)
+                    {
+                        Debug.Log("so chan" + Array2[i,j] + " ");
+                    }
+                }
+                
+            }
+        }
+
+        int[] CacSoChan2CTV(int[,]Array2)
+        {
+            int[] kq = new int[Array2.GetLength(0)];
+            int index = 0;
+
+            for (int i = 0; i < Array2.GetLength(0); i++)
+            {
+                for (int j = 0; j < Array2.GetLength(1); j++)
+                {
+                    if (Array2[i, j] % 2 == 0)
+                    {
+                        Array.Resize(ref kq, index + 1);
+                        kq[index] = Array2[i, j];
+                        index++;                  
+                    }
+                }
+            }
+            for (int i = 0; i < kq.Length; i++)
+            {
+                Debug.Log($"so chan  { kq[i] }");
+            }
+            return kq;
+        }
 
 
+
+
+        void CacSoLe2C()
+        {
+            for (int i = 0; i < Array2.GetLength(0); i++)
+            {
+                for (int j = 0; j < Array2.GetLength(1); j++)
+                {
+                    if (Array2[i, j] % 2 != 0)
+                    {
+                        Debug.Log("so chan" + Array2[i, j] + " ");
+                    }
+                }
+
+            }
+        }
+
+        int[] CacSoLe2CTV(int[,] Array2)
+        {
+            int[] kq = new int[Array2.GetLength(0)];
+            int index = 0;
+
+            for (int i = 0; i < Array2.GetLength(0); i++)
+            {
+                for (int j = 0; j < Array2.GetLength(1); j++)
+                {
+                    if (Array2[i, j] % 2 != 0)
+                    {
+                        Array.Resize(ref kq, index + 1);
+                        kq[index] = Array2[i, j];
+                        index++;
+                    }
+                }
+            }
+            for (int i = 0; i < kq.Length; i++)
+            {
+                Debug.Log($"so chan  { kq[i] }");
+            }
+            return kq;
+        }
 
         void CacSoLe()
         {
