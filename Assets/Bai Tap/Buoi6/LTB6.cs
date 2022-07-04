@@ -65,7 +65,7 @@ public class LTB6 : MonoBehaviour
       
         static Enemy()
         {
-            
+          
             Debug.Log("Day la phuong thuc ko tham so");
         }
 

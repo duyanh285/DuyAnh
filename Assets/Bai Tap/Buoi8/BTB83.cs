@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace DA.HomeWorks.Buoi8
+public class Btb83 : MonoBehaviour
 {
-/*
-    public class AnimalB3
+  /*  public class AnimalB3
     {
         public string name;
         public string enviroment;
@@ -72,7 +71,17 @@ namespace DA.HomeWorks.Buoi8
         public void Sound()
         {
             Debug.Log("Quay nuoc");
-        }
-    }*/
+        }*/
+        // Start is called before the first frame update
+        void Start()
+        {
 
-}
+        }
+
+        // Update is called once per frame
+        void Update()
+        {
+
+        }
+    }
+

@@ -48,7 +48,7 @@ namespace DA.LT.B8
         }
         public interface IEnemy
         {
-           public void GetHit(int dmg);
+           // public void GetHit(int dmg);
         }
         public  interface IOther : IEnemy
         {

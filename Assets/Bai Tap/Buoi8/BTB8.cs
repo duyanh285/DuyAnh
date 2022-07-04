@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace DA.HomeWorks.Buoi8
-{
+
     public class BTB8 : MonoBehaviour
     {
         //bt1
@@ -37,15 +36,15 @@ namespace DA.HomeWorks.Buoi8
             {
                 public override void DiChuyen()
                 {
-                    Debug.Log("Bay bang canh");
+                    Debug.Log("bay bang canh");
                 }
                 public override void An()
                 {
-                    Debug.Log("An sau bo");
+                    Debug.Log("an sau bo");
                 }
                 public override void Keu()
                 {
-                    Debug.Log("Hot");
+                    Debug.Log("hot");
                 }
             }
 
@@ -57,7 +56,7 @@ namespace DA.HomeWorks.Buoi8
                 }
                 public override void An()
                 {
-                    Debug.Log("An thit");
+                    Debug.Log("an thit");
                 }
                 public override void Keu()
                 {
@@ -69,11 +68,11 @@ namespace DA.HomeWorks.Buoi8
             {
                 public override void DiChuyen()
                 {
-                    Debug.Log("Boi");
+                    Debug.Log("boi");
                 }
                 public override void An()
                 {
-                    Debug.Log("An tao");
+                    Debug.Log("an tao");
                 }
                 public override void Keu()
                 {
@@ -83,4 +82,3 @@ namespace DA.HomeWorks.Buoi8
         }
        
     }
-}

@@ -14,9 +14,9 @@ namespace AD.HomeWorks.oop
             PC.ChuSoHuu = "DA";
             PC.DiaChiWF = "192.1.1";
             PC.TocDoWF = 10.2f;
-            Debug.Log("chu so huu" + PC.ChuSoHuu);
-            Debug.Log("dia chi wifi" + PC.DiaChiWF);
-            Debug.Log("toc so wifi" + PC.TocDoWF);
+            Debug.Log("chu so huu " + PC.ChuSoHuu);
+            Debug.Log("dia chi wifi " + PC.DiaChiWF);
+            Debug.Log("toc so wifi " + PC.TocDoWF);
 
             pc1.KhoiDong();
             pc1.TatMay();
@@ -51,12 +51,7 @@ namespace AD.HomeWorks.oop
                 this.fan = fan;
             }
 
-
-
-            ~PC()
-            {
-
-            }
+          
 
             public PC()
             {
@@ -69,7 +64,7 @@ namespace AD.HomeWorks.oop
                 fan = "lenovo";
             }
 
-
+            
 
             public void KhoiDong()
             {
@@ -92,6 +87,11 @@ namespace AD.HomeWorks.oop
             public void NhanDuLieu()
             {
                 Debug.Log("nap du lieu vao may");
+
+            }
+
+            ~PC()
+            {
 
             }
 

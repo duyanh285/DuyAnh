@@ -2,13 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace DA.HomeWorks.buoi8
+public class Btb82 : MonoBehaviour
 {
-
-
-    // abstract
-
-    public abstract class AnimalB3
+    public abstract class Animal2
     {
         public string name;
         public string enviroment;
@@ -19,7 +15,7 @@ namespace DA.HomeWorks.buoi8
         public abstract void Sound();
     }
 
-    public class Meo : AnimalB3
+    public class Meo : Animal2
     {
         public override void Move()
         {
@@ -39,7 +35,7 @@ namespace DA.HomeWorks.buoi8
         }
     }
 
-    public class Chim : AnimalB3
+    public class Chim : Animal2
     {
         public override void Move()
         {
@@ -58,7 +54,7 @@ namespace DA.HomeWorks.buoi8
             Debug.Log("hot");
         }
     }
-    public class Ca : AnimalB3
+    public class Ca : Animal2
     {
         public override void Move()
         {
@@ -70,12 +66,22 @@ namespace DA.HomeWorks.buoi8
         }
         public override void EatWhat()
         {
-            Debug.Log("An to ,vi sinh");
+            Debug.Log("An tao ,vi sinh");
         }
         public override void Sound()
         {
             Debug.Log("Quay nuoc");
         }
     }
+    // Start is called before the first frame update
+    void Start()
+    {
+      
+    }
 
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
 }
