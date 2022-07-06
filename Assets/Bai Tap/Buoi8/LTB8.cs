@@ -46,13 +46,13 @@ namespace DA.LT.B8
             public abstract void Die();
            
         }
-        public interface IEnemy
+        interface IEnemy
         {
            // public void GetHit(int dmg);
         }
-        public  interface IOther : IEnemy
+        interface IOther : IEnemy
         {
-
+            
         }
 
         public class  Boss : Enemy, IEnemy,IOther
